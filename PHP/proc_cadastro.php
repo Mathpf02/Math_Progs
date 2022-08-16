@@ -1,13 +1,14 @@
 <?php
 $host ="localhost";
 $user = "root";
-$dbname = "";
-$port = "3306";
+$password = "";
+$database = "cadastro";
 
 //Conexão com a porta
-$conet = new PDO("mysql: host= $host; port= $port; dbname= $dbname, $user, $pass ");
+$conect_banc = new mysqli( $host, $user, $password, $database);
 
-/*Conexão sem a porta
-$conet = new PDO("mysql: host= $host; dbname= $dbname, $user, $pass ");
-*/
+if ($conect_banc -> error){
+    die("Falha de conecxão !!". $conect_banc->error);
+}
+
 ?>
