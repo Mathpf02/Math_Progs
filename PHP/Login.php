@@ -1,26 +1,16 @@
  <?php
-    include('proc_cadastro');
-    if ( isset ($_POST['matricula']) || isset ($_POST['nome']) || isset ($_POST['email']) || 
-       isset ($_POST['curso']) || isset ($_POST['fone']) || isset ($_POST['senha'])){
+    include('proc_login');
+    if ( isset ($_POST['matricula']) || isset ($_POST['senha'])){
 
         if (strlen ($_POST['matricula']) == 0){
             echo "Preencha sua matrícula";
-        }else if(strlen ($_POST['nome']) == 0){
-            echo "Preencha seu nome";
-        }elseif(strlen ($_POST['email']) == 0){
-            echo "Preencha seu e-mail";
-        }elseif(strlen ($_POST['fone']) == 0){
-            echo "Preencha seu telefone";
         }elseif(strlen ($_POST['senha']) == 0){
             echo "Preencha sua senha";
         }else{
             $matricula = $conect_banc -> real_escape_string($_POST['matricula']);
-            $nome = $conect_banc -> real_escape_string($_POST['nome']);
-            $email = $conect_banc -> real_escape_string($_POST['email']);
-            $fone = $conect_banc -> real_escape_string($_POST['fone']);
             $senha = $conect_banc -> real_escape_string($_POST['senha']);
 
-            $sql_code = "SELECT * FROM cadastro WHERE matricula ='$matricula', nome ='$nome', email ='$email', fone ='$fone' AND senha ='$senha' ";
+            $sql_code = "SELECT * FROM cadastro WHERE matricula ='$matricula' AND senha ='$senha' ";
             $sql_query = $conect_banc -> query($sql_code) or die("Falha na execução do código SQL". $conect_banc->error);
 
             $quantidade = $sql_query->num_rows;
@@ -55,29 +45,16 @@
  </head>
 
  <body>
-     <h1> DADOS DE CADASTRO </h1>
+     <h1> CoDe</h1>
+     <h3>Sistema de Cadastro</h3>
 
      <form name="cad_Usuario" method="POST" action=" ">
          <label> Matricula: </label>
          <input type="text" name="matricula" placeholder="Matricula"><br><br>
-
-         <label> Nome: </label>
-         <input type="text" name="nome" placeholder="Nome Completo"><br><br>
-
-         <label> E-mail: </label>
-         <input type="text" name="email" placeholder="Seu-mail"><br><br>
-
-         <label> Curso: </label>
-         <input type="text" name="curso" placeholder="INFO, ADM ou MSI"><br><br>
-
-         <label> Telefone: </label>
-         <input type="text" name="fone" placeholder=" (**) * ****-****"><br><br>
-
          <label> Senha: </label>
          <input type="text" name="senha" placeholder="Senha"><br><br>
 
-         <input type="reset" value="CANCELAR">
-         <input type="submit" value="CADASTRAR">
+         <input type="submit" value="ENTRAR">
      </form>
  </body>
 
