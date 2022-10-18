@@ -1,15 +1,14 @@
-<?
-
+<?php
 $server ="localhost";
 $user ="root";
-$pass =" ";
-$db ="prog_ii";
+$pass ="";
+$bd ="prog_ii";
 $tab ="usuario";
  
-if ( mysqli_connect($server, $user, $pass, $db )){
-    echo"CONECTADO!";
+if ( $con = mysqli_connect($server, $user, $pass, $bd )){
+    //echo"CONECTADO!";
 }else{
-    echo"ERRO";
+    echo"ERRO!";
 }
 
 ?>
