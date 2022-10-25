@@ -13,13 +13,13 @@
 
     <div class="corp">
         <div class="corp_form">
-            <form action="" method="post">
+            <form action="../PHP/cad_return.php" enctype="multipart/form-data" method="post">
                 nome: <input type="text" id="nome" name="f_nome" maxlength="200" placeholder="" required> <br>
                 telefone <input type="text" id="fone" name="f_fone" maxlength="15" placeholder="(**) *****-****"><br>
                 senha: <input type="text" id="senha" name="f_senha" minlength="8" placeholder=""><br>
                 foto de perfil: <input type="file" id="perf" name="f_perf" accept="image/*"><br>
                 <div class="r_botton">
-                    <a class="d_p" onclick="msg()">CANCELAR</a>
+                    <input type="button" onclick="msg()" value="CANCELAR">
                 </div>
                 <input type="submit" value="CADASTRAR">
             </form>
@@ -31,11 +31,8 @@
     function msg() {
 
         if (confirm('Deseja confirmar o cancelamento?')) {
-            window.location.href = 'log.php';
+            window.location.href = 'log.html';
         }
-        /*else {
-                       document.querySelector('.d_p').preventDefault();
-                   }*/
     }
     </script>
 </body>
