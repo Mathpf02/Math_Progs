@@ -1,0 +1,20 @@
+.area_login {
+    height: auto;
+    margin-top: 0.3%;
+    margin-bottom: 3.8%;
+}
+.boyd_login {
+    align-items: flex-start;
+}
+button {
+    font-weight: bold;
+}
+.disabled_error button{
+    background-color: #474C95;
+    color: #949691;
+}
+.disabled_error button:hover {
+    background-color: #474C95;
+    cursor:not-allowed;
+}
+

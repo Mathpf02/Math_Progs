@@ -10,8 +10,8 @@
 </head>
 <body>
     <form action="gravar.php" method="POST">
-       NOME:<input type="text" nome="" value ="<?=nome?>" placeholder="Digite o seu nome" autofocus> <br>
-       MATRICULA: <input type="hidden" nome="matricula" value="<?=matricula?>" placeholder="Digite a sua matricula"> <br>
+       NOME:<input type="text" nome="" value ="<?=$nome?>" placeholder="Digite o seu nome" autofocus> <br>
+       MATRICULA: <input type="hidden" nome="matricula" value="<?=$matricula?>" placeholder="Digite a sua matricula"> <br>
        <input type="submit" value="CADASTRAR">
 
 

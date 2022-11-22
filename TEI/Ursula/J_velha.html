@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> Velha</title>
+        <meta charset="utf-8">
+        <link rel="StyleSheet" type="Text/css" href="estilo_img.css">    
+   </head>
+<body>
+
+<div class="titulo">
+<h1> Jogo da velha - Jogador: 
+<img id="quemJoga" src=""> 
+</h1>
+</div>
+<button onclick="limpa()"> Iniciar jogo </button> 
+
+<div class="contimgs">
+	<img class="imgxy" id="img11" src="Caveira.png" onclick="jogar(11)">
+	<img class="imgxy" id="img12" src="Caveira.png" onclick="jogar(12)">
+	<img class="imgxy" id="img13" src="Caveira.png" onclick="jogar(13)">
+</div>
+
+<div class="contimgs">
+	<img class="imgxy" id="img21" src="Caveira.png" onclick="jogar(21)">
+	<img class="imgxy" id="img22" src="Caveira.png" onclick="jogar(22)">
+	<img class="imgxy" id="img23" src="Caveira.png" onclick="jogar(23)">	
+</div>
+
+<div class="contimgs">
+	<img class="imgxy" id="img31" src="Caveira.png" onclick="jogar(31)">
+	<img class="imgxy" id="img32" src="Caveira.png" onclick="jogar(32)">
+	<img class="imgxy" id="img33" src="Caveira.png" onclick="jogar(33)">
+</div>
+<div class="M_vecedor" data-winning-message></div>
+	<p><b> X foi o vencedor</p></b>
+	<button>REINICIAR</button>
+
+</div>
+<script scr="./script.js"></script> 
+</body>
+
+</html>

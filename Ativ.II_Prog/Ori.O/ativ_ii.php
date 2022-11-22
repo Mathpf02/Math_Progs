@@ -16,5 +16,8 @@ class calculo
             $this->altura = $larg;
         }
     }
-
+    public function __toString() : string
+    {
+        
+    }
 }
