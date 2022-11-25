@@ -1,0 +1,28 @@
+@font-face {
+        font-family: 'Orb_Black';
+        src: url('/CoDe/FONT/ORBITRON/Orbitron-Black.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+
+        font-family: 'Orb_Bold';
+        src: url('/CoDe/FONT/ORBITRON/Orbitron-Bold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+
+        font-family: 'Orb_Medium';
+        src: url('/CoDe/FONT/ORBITRON/Orbitron-Medium.ttf') format('truetype'); 
+        font-weight: normal;
+        font-style: normal;
+
+        font-family: 'Orb_Regular';
+        src: url('/CoDe/FONT/ORBITRON/Orbitron-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }ace
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orb_Black','Orb_Bold';
+}
