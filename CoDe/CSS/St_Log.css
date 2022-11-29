@@ -3,7 +3,7 @@
         src: url('/CoDe/FONT/ORBITRON/Orbitron-Black.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
-
+        /*
         font-family: 'Orb_Bold';
         src: url('/CoDe/FONT/ORBITRON/Orbitron-Bold.ttf') format('truetype');
         font-weight: normal;
@@ -18,11 +18,127 @@
         src: url('/CoDe/FONT/ORBITRON/Orbitron-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
+        */
     }ace
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Orb_Black','Orb_Bold';
+   
+    font-weight: bold;
+    font-size: 1.35rem;;
+}
+body{ 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../IMG/Fundo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+}
+img{
+    width: 200px;
+    background-color: #ffff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+a{
+    color: #011D42;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.conteiner{
+    width: 650px;
+    height: 350px;
+    display: flex;
+    
+    background-color: #6A82A4;
+    padding: 30px;
+    color: #fff;
+    border-radius: 10px;
+    
+
+}
+.esquerda{
+    width: 100%;
+    flex-direction: start;
+    color: #011D42;
+}.esquerda .form{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}.esquerda .superior{
+    text-align: center;
+    font-size: 1.3em;
+}.esquerda .superior h2{
+    margin-bottom: 5px;
+    font-weight: bold;
+}.esquerda .superior p {
+    margin-bottom: 0px;
+    font-size: .95em;
+}.esquerda .form label {
+    font-size: .7rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+
+}.esquerda .form input{
+    height: 25px;
+    border-radius: 5px;
+    border-color: #011D42;
+    background-color: #6A82A4;
+    outline: none;
+    border: 1px solid rgb(35,35,35);
+
+    font-size: 1.1rem;
+    padding: 0 10px;
+    margin-bottom: 3px;
+}.esquerda .form input:focus{
+    border: 1px solid rgb(62, 62, 121);
+}.esquerda .form span{
+    letter-spacing: -.2px;
+    margin-bottom: 20px;
+    font-size: .9rem;
+
+} .esquerda .form button{
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #173C6D;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    cursor: pointer;
+}.esquerda .form button:hover{
+    background-color: #011D42;
+} .esquerda .form .cadastrar{
+    font-size: .9rem;
+}
+.direita{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #011D42;
+    text-align: center;
+} .direita h2{
+    margin-bottom: 0px;
+    
+}.direita p{
+    font-size: .95rem;
+    
 }

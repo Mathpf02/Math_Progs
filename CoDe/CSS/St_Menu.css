@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,700;1,400 & display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin+Sans', sans-serif;
+}
+body{
+  background-image: url(../IMG/c_Fundo.png);
+  background-repeat: no-repeat;
+  background-position: and;
+  background-size: cover;
+  overflow: hidden;
+}
+header{
+  background-color:#6A82A4;
+  box-shadow: 0px 3px 5px #011D42;
+ 
+}
+.nav_bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 10rem;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 6rem;
+  height: 5rem;
+}
+.nav_list{
+  display: flex;
+  align-items: center;
+}.nav_list ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.nav_itens{
+  margin: 1rem;
+}
+.nav_link{
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #011D42;
+  font-weight: 400;
+}
+.log_button button{
+  
+  border: none;
+  background-color: #011D42;
+  padding: 10px 30px;
+  border-radius: 5px;
+
+}.log_button button a{
+  text-decoration: none; 
+  color: #fff;
+  font-weight:500;
+}
