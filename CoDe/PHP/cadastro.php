@@ -60,8 +60,8 @@
                     </div>
                 </div>
                 <div class="are_button">
-                    <button type="reset">VOLTAR</button>
-                    <button type="submit">ENTRAR</button><br>
+                    <button type="reset" onclick="msg()">VOLTAR</button>
+                    <button type="submit">ENTRAR</button>
                 </div>
 
             </form>
@@ -79,7 +79,7 @@
     function msg() {
 
         if (confirm('Deseja confirmar o cancelamento?')) {
-            window.location.href = 'log.html';
+            window.location.href = '../PHP/login.php';
         }
     }
 </script>
