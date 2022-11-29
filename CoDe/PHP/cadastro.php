@@ -19,37 +19,50 @@
 
         <div class="P_form">
             <form method="POST" action="" class="form">
-                <div class = "form_1">
-                    <label for="matri">MATRICULA</label>
-                    <input type="text" name="matri" id="matri"><br>
+                <div class="area_form">
+                    <div class="form_1">
+                        <div class="area_uput">
+                            <label for="matri">MATRICULA</label>
+                            <input type="text" class="input_text" name="matri" id="matri"><br>
+                        </div>
+                        <div class="area_uput">
+                            <label for="name">NOME</label>
+                            <input type="text" class="input_text" name="nome" id="nome"><br>
+                        </div>
+                        <div class="area_uput">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" class="input_text" name="email" id="email"><br>
+                        </div>
+                        <div class="area_uput">
+                            <label for="curso">CURSO</label><br>
+                            <div class="area_radios_area_">
+                                <div class="area_radio"> <input type="radio" name="curso" id="curso">ADM</div>
+                                <div class="area_radio"><input type="radio" name="curso" id="curso">INFO</div>
+                                <div class="area_radio"><input type="radio" name="curso" id="curso">MSI<br></div>
+                            </div>
+                        </div>
+                        <div class="area_uput">
+                            <label for="fone">TELEFONE</label>
+                            <input type="fone" class="input_text" name="fone" id="fone"><br>
+                        </div>
+                        <div class="area_uput">
+                            <label for="senha">SENHA</label>
+                            <input type="password" class="input_text" name="senha" id="senha">
+                        </div>
+                    </div>
 
-                    <label for="name">NOME</label>
-                    <input type="text" name="nome" id="nome"><br>
-
-                    <label for="email">E-MAIL</label>
-                    <input type="email" name="email" id="email"><br>
-
-                    <label for="curso">CURSO</label><br>
-                    <input type="radio" name="curso" id="curso">ADM
-                    <input type="radio" name="curso" id="curso">INFO
-                    <input type="radio" name="curso" id="curso">MSI<br>
-
-                    <label for="fone">TELEFONE</label>
-                    <input type="fone" name="fone" id="fone"><br>
-
-                    <label for="senha">SENHA</label>
-                    <input type="password" name="senha" id="senha">
+                    <div class="form_2">
+                        <label for="perfil">
+                            <img id="f_perfil" src="../IMG/up_code.png">
+                            <input type="file" id='perfil' name="perfil" style="display:none;"> <br>
+                            PERFIL</label>
+                        <p>Selecione uma foto de perfil.</p>
+                    </div>
                 </div>
-
-                <div class="form_2">
-                    <input type="file" id="f_perfil"><br>
-                    <label for="perfil">PERFIL</label>
-                    <p>Selecione uma foto de perfil.</p>
+                <div class="are_button">
+                    <button type="reset">VOLTAR</button>
+                    <button type="submit">ENTRAR</button><br>
                 </div>
-
-                <button type="reset">VOLTAR</button>
-                <button type="submit">ENTRAR</button><br>
-
 
             </form>
         </div>
@@ -58,3 +71,15 @@
 </body>
 
 </html>
+<script>
+    document.querySelector('#perfil').addEventListener('change', () => {
+        alert('sas');
+    })
+
+    function msg() {
+
+        if (confirm('Deseja confirmar o cancelamento?')) {
+            window.location.href = 'log.html';
+        }
+    }
+</script>
