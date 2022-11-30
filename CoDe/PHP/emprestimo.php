@@ -16,7 +16,7 @@
             <div class="nav_list">
                 <ul>
                     <li class="nav_itens"><a href="../HTML/Inicio.html" class="nav_link">PROJETO</a></li>
-                    <li class="nav_itens"><a href="../PHP/emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                    <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
                     <li class="nav_itens"><a href="#" class="nav_link">PERFIL</a></li>
                     <li class="nav_itens"><a href="../HTML/Comenta.html" class="nav_link">CONTATO</a></li>
                 </ul>
