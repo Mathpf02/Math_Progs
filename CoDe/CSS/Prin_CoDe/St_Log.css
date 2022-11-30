@@ -39,7 +39,7 @@ body{
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background-image: url('../IMG/Fundo.png');
+    background-image: url('../../IMG/c_Fundo.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -100,15 +100,15 @@ a:hover {
     height: 25px;
     border-radius: 5px;
     border-color: #011D42;
-    background-color: #6A82A4;
+    background-color: transparent;
     outline: none;
-    border: 1px solid rgb(35,35,35);
+    border: 2px solid #011D42 ;
 
     font-size: 1.1rem;
     padding: 0 10px;
     margin-bottom: 3px;
 }.esquerda .form input:focus{
-    border: 1px solid rgb(62, 62, 121);
+    border: 5px solid #024AA8;
 }.esquerda .form span{
     letter-spacing: -.2px;
     margin-bottom: 20px;

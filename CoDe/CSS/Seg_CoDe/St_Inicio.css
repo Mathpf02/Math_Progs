@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #a5c1e8;
+  background-image: url("../IMG/c_Fundo.png");
+  background-position: center -40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+header {
+  background-color: #6a82a4;
+  box-shadow: 0px 3px 5px #011d42;
+}
+.nav_bar {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 4.5rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 6rem;
+  height: 5rem;
+}
+.nav_list {
+  display: flex;
+  align-items: center;
+}
+.nav_list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.nav_itens {
+  margin: 2rem;
+}.nav_itens:hover{
+  text-decoration: underline;
+}
+.nav_link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #011d42;
+  font-weight: 400;
+}
+.espaço {
+  height: 15px;
+  background-color: #c9e0ff;
+}
+.log_button {
+  display: flex;
+  align-items: center;
+}
+.log_button button {
+  border: none;
+  background-color: #011d42;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+.log_button button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.proj_code {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  margin: 150px;
+}
+.proj_code .text_code {
+  /* width: ; */
+  height: auto;
+  display: flex;
+  text-align: end;
+  justify-content: column;
+  padding: 10px;
+  color: #011d42;
+  border-radius: 10px;
+}
+.img_teste {
+  height: 350px;
+  width: 350px;
+  flex: 1;
+  background-color: red;
+}
+.text_code {
+  display: inline-flex;
+  flex-direction: column;
+
+}

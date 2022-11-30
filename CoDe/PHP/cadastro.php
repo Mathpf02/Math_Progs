@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro-CODE</title>
-    <link rel="stylesheet" href="../CSS/St_Cad.css">
+    <title>CoDe: Cadastro</title>
+    <link rel="stylesheet" href="../CSS/Prin_CoDe/St_cad.css">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="are_button">
                     <button type="reset" onclick="msg()">VOLTAR</button>
-                    <button type="submit">ENTRAR</button>
+                    <button type="submit">CADASTRAR</button>
                 </div>
 
             </form>
@@ -73,7 +73,7 @@
 </html>
 <script>
     document.querySelector('#perfil').addEventListener('change', () => {
-        alert('sas');
+        alert('Sua foto foi selecionada corretamente.');
     })
 
     function msg() {

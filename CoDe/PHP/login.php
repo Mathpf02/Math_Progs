@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login-CODE</title>
-    <link rel="stylesheet" href="../CSS/St_Log.css">
+    <title>CoDe: LOGIN</title>
+    <link rel="stylesheet" href="../CSS/Prin_CoDe/St_Log.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                     <a href=""> Esqueceu sua senha? </a><br>
                 </span>
 
-                <button type="submit">ENTRAR</button><br>
+                <button type="submit"  href="../HTML/Inicio.html">ENTRAR</button><br>
                 <span class="Cadastrar">
                     Precisando de uma conta? <a href="cadastro.php"> <strong>Registre-se</strong> </a>
                 </span>

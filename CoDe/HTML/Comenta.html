@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Seg_CoDe/St_Coment.css">
     <title>CoDe: COMENTA</title>
 </head>
 <body>
@@ -14,9 +15,10 @@
             </div>
             <div class="nav_list">
                 <ul>
-                    <li class="nav_itens"><a href="#" class="nav_link">PROJETO</a></li>
+                    <li class="nav_itens"><a href="Inicio.html" class="nav_link">PROJETO</a></li>
+                    <li class="nav_itens"><a href="../PHP/emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
                     <li class="nav_itens"><a href="#" class="nav_link">PERFIL</a></li>
-                    <li class="nav_itens"><a href="#" class="nav_link">CONTATO</a></li>
+                    <li class="nav_itens"><a href="Comenta.html" class="nav_link">CONTATO</a></li>
                 </ul>
             </div>
             <div class="log_button">
@@ -24,8 +26,45 @@
             </div>
         </nav> 
     </header>
+    <div class="espaço"></div>
+    
+    <div class="cont_comenta">
+        <div class="com_titulo">
+            <p>CoDe:</p>
+            <h1>CONTATO</h1>
+        </div>
+        <div class="com_Form">
+            <form action="https://formsubmit.co/el/pubuno" method="post"></form>
+            <div class="area_uput">
+                <label for="name">NOME</label><br>
+                <input type="text" class="input_text" name="nome"/>
+            </div>
+            <div class="area_uput">
+                <label for="email">E-MAIL</label><br>
+                <input type="email" class="input_text" name="email"/>
+            </div>
+            <div class="area_uput">
+                <label for="menssage">COMENTARIO</label><br>
+                <textarea type="hidden" class="input_text" name="menssage" placeholder="DIGITE SUA MENSAGEM!"></textarea>
+            </div>
+
+            <div class="are_button">
+                <button type="submit"onclick="msg()">ENVIAR</button>
+            </div>
+
+        </div>
+
+    </div>
 
 
 
 </body>
 </html>
+<script>
+    function msg() {
+  
+        if (confirm('Deseja enviar está mensagem?')) {
+            window.location.href = '../HTML/Comenta.html';
+        }
+    }
+  </script>
