@@ -6,7 +6,7 @@
 body {
   height: 100vh;
   background-color: #a5c1e8;
-  background-image: url("../IMG/c_Fundo.png");
+  background-image: url("../../IMG/c_Fundo.png");
   background-position: center -40%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,8 @@ header {
 }
 .nav_itens {
   margin: 2rem;
-}.nav_itens:hover{
+}
+.nav_itens:hover {
   text-decoration: underline;
 }
 .nav_link {
@@ -97,5 +98,4 @@ header {
 .text_code {
   display: inline-flex;
   flex-direction: column;
-
 }
