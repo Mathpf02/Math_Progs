@@ -1,3 +1,25 @@
+<?php
+
+use LDAP\Result;
+
+include('conexao.php');
+    $Matricula= $_POST['matri'];
+    $Nome= $_POST['nome'];
+    $Email= $_POST['email'];
+    $Curso= $_POST['curso'];
+    $Telefone= $_POST['fone'];
+    $Senha= $_POST['senha'];
+    $Perfil= $_POST['perfil'];
+
+
+    $result = mysqli_query($conexao, 
+    "INSERT INTO cad_code(matricula,nome,email,curso,fone,senha,f_perfil)
+    VALUE ('$Matricula','$Nome','$Email','$Curso','$Telefone','$Senha','$Perfil')");
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

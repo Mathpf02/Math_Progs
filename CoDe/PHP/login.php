@@ -17,7 +17,7 @@
                 </strong>
             </div>
 
-            <form method="POST" action="" class="form">
+            <form method="POST" action="env_login.php" class="form">
                 <label for="email">E-MAIL OU MATRICULA</label>
                 <input type="text" id="email"><br>
 
