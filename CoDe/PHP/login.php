@@ -1,3 +1,10 @@
+<?php
+if(!isset($_SESSION)){
+session_start();}
+require_once "funcoes.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,14 +25,15 @@
             </div>
 
             <form method="POST" action="env_login.php" class="form">
-                <label for="email">E-MAIL OU MATRICULA</label>
-                <input type="text" id="email"><br>
+            <div style="color: red;"><?= exibeMensagens() ?></div>
+                <label for="matricula">MATRICULA</label>
+                <input type="number" id="matricula"><br>
 
                 <label for="senha">SENHA</label>
                 <input type="password" id="senha">
 
                 <span class="esquecer">
-                    <a href=""> Esqueceu sua senha? </a><br>
+                    <a href="recuperar.php"> Esqueceu sua senha? </a><br>
                 </span>
 
                 <button type="submit"  href="../HTML/Inicio.html">ENTRAR</button><br>

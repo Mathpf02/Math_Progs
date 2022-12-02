@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)){
+    session_start();}
+    require_once "funcoes.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

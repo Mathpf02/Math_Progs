@@ -1,20 +1,11 @@
 <?php
-
-use LDAP\Result;
-
-include('conexao.php');
-    $Matricula= $_POST['matri'];
-    $Nome= $_POST['nome'];
-    $Email= $_POST['email'];
-    $Curso= $_POST['curso'];
-    $Telefone= $_POST['fone'];
-    $Senha= $_POST['senha'];
-    $Perfil= $_POST['perfil'];
-
-
-    $result = mysqli_query($conexao, 
-    "INSERT INTO cad_code(matricula,nome,email,curso,fone,senha,f_perfil)
-    VALUE ('$Matricula','$Nome','$Email','$Curso','$Telefone','$Senha','$Perfil')");
+function exibeMensagens() {
+    if (isset($_SESSION['mensagem'])) {
+        $msg = $_SESSION['mensagem'];
+        unset($_SESSION['mensagem']);
+        return $msg;
+    }
+}
 
 ?>
 
@@ -40,7 +31,8 @@ include('conexao.php');
         </div>
 
         <div class="P_form">
-            <form method="POST" action="" class="form">
+            <form method="POST" action="" class="form" onsubmit="return validarSenha();">
+            <div style="color: red;"><?= exibeMensagens() ?></div>
                 <div class="area_form">
                     <div class="form_1">
                         <div class="area_uput">
@@ -70,6 +62,8 @@ include('conexao.php');
                         <div class="area_uput">
                             <label for="senha">SENHA</label>
                             <input type="password" class="input_text" name="senha" id="senha">
+                            <label for="senha"> CONFIRMAR SENHA</label>
+                            <input type="password" class="input_text" name="rep_senha" id="rep_senha">
                         </div>
                     </div>
 
@@ -104,4 +98,20 @@ include('conexao.php');
             window.location.href = '../PHP/login.php';
         }
     }
+    function validarSenha() {
+            senha = document.getElementsByName("senha")[0].value;
+            repetirSenha = document.
+                            getElementsByName("repetirSenha")[0].value;
+            if (senha == repetirSenha) {
+                document.getElementsByName("repetirSenha")[0].
+                        setCustomValidity('');
+                document.forms[0].submit;
+            } else {
+                document.getElementsByName("repetirSenha")[0].
+                        setCustomValidity('As senhas não conferem');
+                return false;
+            }
+        }
+
+
 </script>

@@ -1,27 +1,23 @@
 <?php
+session_start();
 
-if(print_r($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])){
+$Matricula = $_POST['matri'];
+$Senha = $_POST['senha'];
+$SenhaMD5 = md5($Senha);
 
-    //acesso
-    include('conexao.php');
-    $Email = $_POST['email'];
-    $Senha = $_POST['senha'];
+require_once "conexao.php";
 
-
-    $sql = "SELECT*FROM cad_code WHERE email= '$Email' and senha= '$Senha'";
-    $result = $conexao->query($sql);
-   
-    if(mysqli_num_rows($result) < 1){
-        $_SESSION['email'] = $Email;
-        $_SESSION['senha'] = $Senha;
-        header('Location: login.php');
-    }else{
-        $_SESSION['email'] = $Email;
-        $_SESSION['senha'] = $Senha;
-        header('Location: Inicio.php');
-    }
-
-
-}else{
-    header('Location: login.php');
+$sql = "SELECT * FROM cad_code WHERE matri='$Matricula'";
+$resultSet = mysqli_query($conexao, $sql);
+$usuario = mysqli_fetch_assoc($resultSet);
+//var_dump($usuario);die;
+if (is_null($usuario)) {
+    $_SESSION['mensagem'] = "Usuário informado não existe";
+    header("Location: login.php");
+} else if ($senhaMD5 == $usuario['senha']) {
+    $_SESSION['id_pessoa'] = $usuario['id_pessoa'];
+    header("Location: ../HTML/Incio.html");
+} else {
+    $_SESSION['mensagem'] = "Senha inválida!";
+    header("Location: login.php");
 }
