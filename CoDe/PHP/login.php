@@ -27,16 +27,16 @@ require_once "funcoes.php";
             <form method="POST" action="env_login.php" class="form">
             <div style="color: red;"><?= exibeMensagens() ?></div>
                 <label for="matricula">MATRICULA</label>
-                <input type="number" id="matricula"><br>
+                <input type="number" name="matri" id="matricula"><br>
 
                 <label for="senha">SENHA</label>
-                <input type="password" id="senha">
+                <input type="password" name="senha" id="senha">
 
                 <span class="esquecer">
                     <a href="recuperar.php"> Esqueceu sua senha? </a><br>
                 </span>
 
-                <button type="submit"  href="../HTML/Inicio.html">ENTRAR</button><br>
+                <button type="submit">ENTRAR</button><br>
                 <span class="Cadastrar">
                     Precisando de uma conta? <a href="cadastro.php"> <strong>Registre-se</strong> </a>
                 </span>

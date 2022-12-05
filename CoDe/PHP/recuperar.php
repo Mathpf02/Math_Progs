@@ -23,11 +23,11 @@ if(!isset($_SESSION)){
                 </strong>
             </div>
 
-            <form method="POST" action="" class="form">
+            <form method="POST" action="rec_senha.php" class="form">
                 <label for="email">E-MAIL</label>
-                <input type="text" id="email"><br>
+                <input type="text" name="email"id="email"><br>
 
-                <button type="submit"  href="../HTML/Inicio.html">SOLICITAR RECUPERAÇÃO</button><br>
+                <button type="submit">SOLICITAR RECUPERAÇÃO</button><br>
             </form>
 
         </div>

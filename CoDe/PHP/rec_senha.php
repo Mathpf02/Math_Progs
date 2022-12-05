@@ -10,22 +10,22 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 require_once "conexao.php";
-$email = $_POST['email'];
+$Email = $_POST['email'];
 
-$sql = "SELECT * FROM pessoa WHERE email='$email'";
+$sql = "SELECT * FROM cad_code WHERE email='$Email'";
 $resultSet = mysqli_query($conexao, $sql);
 $usuario = mysqli_fetch_assoc($resultSet);
 if (!is_null($usuario)) { // caso o email exista no banco de dados
-    $token = bin2hex(random_bytes(50));
+    $Token = bin2hex(random_bytes(50));
     $dataExpiracao = new DateTime();
     $dataExpiracao->add(new DateInterval("P1D"));
 
     // gravar a data de expiração e o token no banco
-    $sql = "INSERT INTO password_reset VALUES ('$email', '$token', \"" . $dataExpiracao->format('Y-m-d H:i:s') . "\"), 0";
+    $sql = "INSERT INTO res_code VALUES ('$Email', '$Token', \"" . $dataExpiracao->format('Y-m-d H:i:s') . "\"), 0";
     $gravou = mysqli_query($conexao, $sql);
 
     if ($gravou) {
-        // enviar o email de resetar senha pro magrão
+        // enviar o email de resetar senha
 
         $mail = new PHPMailer(true);
         try {
@@ -37,7 +37,7 @@ if (!is_null($usuario)) { // caso o email exista no banco de dados
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'matheus.2020316590@aluno.iffar.edu.br';
+            $mail->Username = 'matheus.2019322700@aluno.iffar.edu.br';
             $mail->Password = 'qvojkmtwosmaixij';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
@@ -54,23 +54,23 @@ if (!is_null($usuario)) { // caso o email exista no banco de dados
 
             //Recipients = Quem vai enviar o email
 
-            $mail->setFrom('matheus.2020316590@aluno.iffar.edu.br', 'Não responda este email!');
-            $mail->addAddress($email);                            //Add a recipient
-            $mail->addReplyTo('matheus.2020316590@aluno.iffar.edu.br', 'Não responda este email!');
+            $mail->setFrom('matheus.2019322700@aluno.iffar.edu.br', 'Não responda este email!');
+            $mail->addAddress($Email);                            //Add a recipient
+            $mail->addReplyTo('matheus.2019322700@aluno.iffar.edu.br', 'Não responda este email!');
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Redefinir a sua senha no '
-                . 'Sistema da Aula';
+                . 'Sistema de Emprestimo';
             $mail->Body = "Olá,<br>"
                 . "<br>"
                 . "Você solicitou a redefinição da sua senha no"
-                . " Sistema da Aula.<br>"
+                . " Sistema de Emprestimo.<br>"
                 . "Para redefinir a sua senha clique neste "
                 . "<a href=\""
                 . filter_input(INPUT_SERVER, 'SERVER_NAME')
-                . "/MMCINFO31/prog/sessoes/nova-senha.php?email=" . $email . "&token="
-                . $token . "\">link</a>.<br>"
+                . "/Math_Progs/CoDe/PHP/troca_senha.php?email=" . $Email . "&token="
+                . $Token . "\">link</a>.<br>"
                 . "Este link só funcionará uma única vez, e "
                 . "expirará em um dia.<br>"
                 . "<br>"
@@ -93,4 +93,4 @@ if (!is_null($usuario)) { // caso o email exista no banco de dados
     $_SESSION['mensagem'] = "Email informado inexistente!";
 }
 
-header("Location: form-recuperar-senha.php");
+header("Location: recuperar.php");

@@ -4,13 +4,13 @@ session_start();
 require_once "funcoes.php";
 
 // verificar se o email e token batem com banco
-$email = $_GET['email'];
-$token = $_GET['token'];
+$Email = $_GET['email'];
+$Token = $_GET['token'];
 
 require_once "conexao.php";
 
-$sql = "SELECT * FROM password_reset WHERE "
-    . "email='$email' AND token='$token'";
+$sql = "SELECT * FROM res_code WHERE "
+    . "email='$Email' AND token='$Token'";
 $resultSet = mysqli_query($conexao, $sql);
 $reset = mysqli_fetch_assoc($resultSet);
 if (!is_null($reset)) {
@@ -53,11 +53,11 @@ if (!is_null($reset)) {
             <form method="POST" action="" class="form" onsubmit="return validarSenha();">
             <div style="color: red;"><?= exibeMensagens() ?></div>
                 <label for="senha">SENHA</label>
-                <input type="password" name="email" id="senha" required>
+                <input type="password" name="senha" id="senha" required>
                 <label for="senha"> CONFIRMAR SENHA</label>
                 <input type="password" name="rep_senha" id="rep_senha" required>
 
-                <button type="submit"  href="../HTML/Inicio.html">SALVAR</button><br>
+                <button type="submit">SALVAR</button><br>
             </form>
 
     </div>
@@ -65,13 +65,13 @@ if (!is_null($reset)) {
         function validarSenha() {
             senha = document.getElementsByName("senha")[0].value;
             repetirSenha = document.
-            getElementsByName("repetirSenha")[0].value;
+            getElementsByName("rep_senha")[0].value;
             if (senha == repetirSenha) {
-                document.getElementsByName("repetirSenha")[0].
+                document.getElementsByName("rep_senha")[0].
                 setCustomValidity('');
                 document.forms[0].submit;
             } else {
-                document.getElementsByName("repetirSenha")[0].
+                document.getElementsByName("rep_senha")[0].
                 setCustomValidity('As senhas não conferem!');
                 return false;
             }

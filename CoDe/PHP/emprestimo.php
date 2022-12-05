@@ -22,7 +22,7 @@
                 </ul>
             </div>
             <div class="log_button">
-                <button><a href="../PHP/login.php">SAIR</a></button>
+                <button><a href="logout.php">SAIR</a></button>
             </div>
         </nav> 
     </header>

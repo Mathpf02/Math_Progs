@@ -7,7 +7,7 @@ $SenhaMD5 = md5($Senha);
 
 require_once "conexao.php";
 
-$sql = "SELECT * FROM cad_code WHERE matri='$Matricula'";
+$sql = "SELECT * FROM cad_code WHERE matricula='$Matricula'";
 $resultSet = mysqli_query($conexao, $sql);
 $usuario = mysqli_fetch_assoc($resultSet);
 //var_dump($usuario);die;
