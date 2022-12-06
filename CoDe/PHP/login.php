@@ -1,6 +1,7 @@
 <?php
-if(!isset($_SESSION)){
-session_start();}
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once "funcoes.php";
 ?>
 
@@ -24,8 +25,8 @@ require_once "funcoes.php";
                 </strong>
             </div>
 
-            <form method="POST" action="env_login.php" class="form">
-            <div style="color: red;"><?= exibeMensagens() ?></div>
+            <form method="POST" action="login_user.php" class="form">
+                <div style="color: black;"><?= exibeMensagens() ?></div>
                 <label for="matricula">MATRICULA</label>
                 <input type="number" name="matri" id="matricula"><br>
 
@@ -47,7 +48,7 @@ require_once "funcoes.php";
             <img src="../IMG/qrcode_TCC.jpg" alt="">
             <h2>Leia o meu TCC</h2>
             <p>Escaneie isto com o <b>Google Leans
-                atráves da câmera do celular</b> para
+                    atráves da câmera do celular</b> para
                 ler o poder ler o documento.</p>
         </div>
 
