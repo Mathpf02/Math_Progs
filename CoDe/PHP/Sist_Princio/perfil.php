@@ -1,57 +1,48 @@
-<?php
-session_start();
-
-// if (!isset($_SESSION['id_pessoa'])) {
-//     $_SESSION['mensagem'] = "Você deve primeiro realizar o login.";
-//     header("Location: index.php");
-// }
-require_once "funcoes.php";
-require_once "conexao.php";
-if (isset($_GET['id'])) {
-    $idPessoa = mysqli_real_escape_string($conexao, $_GET['id']);
-    $sql = "SELECT * FROM cad_code WHERE matri = $idPessoa";
-    $resultSet = mysqli_query($conexao, $sql);
-    $pessoa = mysqli_fetch_assoc($resultSet);
-    $matricula = $pessoa['matri'];
-    $nome = $pessoa['nome'];
-    $email = $pessoa['email'];
-    $telefone = $pessoa['fone'];
-} else {
-    $matricula = null;
-    $nome = null;
-    $email = null;
-    $telefone = null;
-}
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>CoDe: Cadastro</title>
-    <link rel="stylesheet" href="../CSS/Prin_CoDe/St_cad.css">
-</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/Seg_CoDe/St_Perfil.css">
 
+    <title>CoDe: Perfil Usuario</title>
+</head>
+<header>
+        <nav class="nav_bar">
+            <div class="logo">
+                <img src="../../IMG/1.png">
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
+                    <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                    <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
+                    <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
+                </ul>
+            </div>
+            <div class="log_button">
+                <button><a href="../../logout.php">SAIR</a></button>
+            </div>
+        </nav> 
+    </header>
+    <div class="espaço"></div>
 <body>
     <div class="conteiner">
 
         <div class="superior">
             <p>Sistema de</p>
             <strong>
-                <h2>CADASTRO</h2>
+                <h2>PERFIL</h2>
             </strong>
         </div>
 
         <div class="P_form">
-            <form method="POST" action="env_cadastrar.php" class="form" onsubmit="return validarSenha();">
+            <form method="POST" action="alt_perfil.php" class="form" onsubmit="return validarSenha();">
                 <div style="color: black;"><?= exibeMensagens() ?></div>
                 <div class="area_form">
                     <div class="form_1">
-                        <div class="area_uput">
-                            <label for="matri">MATRICULA</label>
-                            <input type="text" class="input_text" name="matri" id="matri" value="<?= $matricula ?>"><br>
-                        </div>
                         <div class="area_uput">
                             <label for="name">NOME</label>
                             <input type="text" class="input_text" name="nome" id="nome" value="<?= $nome  ?>"><br>
@@ -72,12 +63,6 @@ if (isset($_GET['id'])) {
                             <label for="fone">TELEFONE</label>
                             <input type="fone" class="input_text" name="fone" id="fone" value="<?= $telefone  ?>"><br>
                         </div>
-                        <div class="area_uput">
-                            <label for="senha">SENHA</label>
-                            <input type="password" class="input_text" name="senha" id="senha">
-                            <label for="senha"> CONFIRMAR SENHA</label>
-                            <input type="password" class="input_text" name="rep_senha" id="rep_senha" onblur="validarSenha()">
-                        </div>
                     </div>
 
                     <div class="form_2">
@@ -89,14 +74,14 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
                 <div class="are_button">
-                    <button type="reset" onclick="msg()">VOLTAR</button>
-                    <button type="submit">CADASTRAR</button>
+                    <button type="submit"onclick="msg()">CADASTRAR</button>
                 </div>
 
             </form>
         </div>
 
     </div>
+
 </body>
 
 </html>
@@ -107,23 +92,8 @@ if (isset($_GET['id'])) {
 
     function msg() {
 
-        if (confirm('Deseja confirmar o cancelamento?')) {
-            window.location.href = '../PHP/login.php';
-        }
-    }
-
-    function validarSenha() {
-        senha = document.getElementsByName("senha")[0].value;
-        repetirSenha = document.
-        getElementsByName("rep_senha")[0].value;
-        if (senha == repetirSenha) {
-            document.getElementsByName("rep_senha")[0].
-            setCustomValidity('');
-            document.forms[0].submit;
-        } else {
-            document.getElementsByName("rep_senha")[0].
-            setCustomValidity('As senhas não conferem');
-            return false;
+        if (confirm('Deseja confirmar a edição?')) {
+            window.location.href = 'inicio.php';
         }
     }
 </script>

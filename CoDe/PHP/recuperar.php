@@ -1,7 +1,6 @@
 <?php
-if(!isset($_SESSION)){
-    session_start();}
-    require_once "funcoes.php";
+session_start();
+require_once "funcoes.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +23,7 @@ if(!isset($_SESSION)){
             </div>
 
             <form method="POST" action="rec_senha.php" class="form">
+                <div style="color: black;"><?= exibeMensagens() ?></div>
                 <label for="email">E-MAIL</label>
                 <input type="text" name="email"id="email"><br>
 

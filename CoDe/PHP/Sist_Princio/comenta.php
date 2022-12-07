@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Seg_CoDe/St_Coment.css">
+    <link rel="stylesheet" href="../../CSS/Seg_CoDe/St_Coment.css">
     <title>CoDe: COMENTA</title>
 </head>
 <body>
-    <header>
+<header>
         <nav class="nav_bar">
             <div class="logo">
-                <img src="../IMG/1.png">
+                <img src="../../IMG/1.png">
             </div>
             <div class="nav_list">
                 <ul>
-                    <li class="nav_itens"><a href="Inicio.html" class="nav_link">PROJETO</a></li>
-                    <li class="nav_itens"><a href="../PHP/emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
-                    <li class="nav_itens"><a href="#" class="nav_link">PERFIL</a></li>
-                    <li class="nav_itens"><a href="Comenta.html" class="nav_link">CONTATO</a></li>
+                    <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
+                    <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                    <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
+                    <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
                 </ul>
             </div>
             <div class="log_button">
-                <button><a href="../PHP/../PHP/logout.php">SAIR</a></button>
+                <button><a href="../../logout.php">SAIR</a></button>
             </div>
         </nav> 
     </header>
@@ -34,7 +34,7 @@
             <h1>CONTATO</h1>
         </div>
         <div class="com_Form">
-            <form action="https://formsubmit.co/el/pubuno" method="post"></form>
+            <form action="" method="post"></form>
             <div class="area_uput">
                 <label for="name">NOME</label><br>
                 <input type="text" class="input_text" name="nome"/>
@@ -64,7 +64,7 @@
     function msg() {
   
         if (confirm('Deseja enviar está mensagem?')) {
-            window.location.href = '../HTML/Comenta.html';
+            window.location.href = 'comenta.php';
         }
     }
   </script>

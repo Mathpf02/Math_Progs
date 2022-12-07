@@ -1,20 +1,23 @@
 <?php
+session_start();
+
+$matricula = $_POST['matri'];
+$senha = $_POST['senha'];
+$senhaMD5 = md5($senha);
 
 require_once "conexao.php";
 
-$matri = mysqli_real_escape_string($conexao, $_POST['matri']);
-$pdo = mysqli_query($conexao, "SELECT * FROM cad_code WHERE matricula=" . $matri);
-$pdo = mysqli_fetch_assoc($pdo);
-if (is_null($pdo) or empty($pdo)) {
-    $_SESSION['mensagem'] = 'O usuário não possui cadastro no sistema.';
-    header('location: login.php');
+$sql = "SELECT * FROM cad_code WHERE matricula='$matricula'";
+$resultSet = mysqli_query($conexao, $sql);
+$usuario = mysqli_fetch_assoc($resultSet);
+//var_dump($usuario);die;
+if (is_null($usuario)) {
+    $_SESSION['mensagem'] = "Usuário informado não existe";
+    header("Location: login.php");
+} else if ($senhaMD5 == $usuario['senha']) {
+    $_SESSION['matricula'] = $usuario['matricula'];
+    header("Location: Sist_Princio/inicio.php");
 } else {
-    if (password_verify($_POST['senha'], $pdo['senha'])) {
-        $_SESSION['matricula'] = $matri;
-        header("location: ../HTML/Inicio.php");
-        die;
-    } else {
-        $_SESSION['mensagem'] = 'Senha invalida.';
-        header('location: login.php');
-    }
+    $_SESSION['mensagem'] = "Senha inválida!";
+    header("Location: login.php");
 }
