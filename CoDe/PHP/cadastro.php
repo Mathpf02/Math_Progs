@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
         </div>
 
         <div class="P_form">
-            <form method="POST" action="sal_cadastro.php" class="form" onsubmit="return validarSenha();">
+            <form method="POST" action="cadastrar_usuario.php" class="form" onsubmit="return validarSenha();">
                 <div style="color: red;"><?= exibeMensagens() ?></div>
                 <div class="area_form">
                     <div class="form_1">

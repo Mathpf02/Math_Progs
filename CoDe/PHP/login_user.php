@@ -1,5 +1,7 @@
 <?php
-require_once 'conexao.php';
+
+require_once "conexao.php";
+
 $matri = mysqli_real_escape_string($conexao, $_POST['matri']);
 $pdo = mysqli_query($conexao, "SELECT * FROM cad_code WHERE matricula=" . $matri);
 $pdo = mysqli_fetch_assoc($pdo);
