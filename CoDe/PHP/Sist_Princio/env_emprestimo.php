@@ -11,6 +11,10 @@ if (isset($_FILES['documento'])) {
     $F_Documento = md5(time()) . $ext;
     $dir = "../Up_Documento/";
     move_uploaded_file($_FILES['documento']['tmp_name'], $dir . $F_Documento);
+
+    // var_dump($dir);
+    // var_dump($F_Documento);
+    // die;
 }
 
 $sql = "INSERT INTO `emp_code`(`disp_Tec`, `liber_Uti`, `f_documento`) 
@@ -22,7 +26,8 @@ if ($resultSet) {
     // colocar na sessão
     $_SESSION['id_pessoa'] = $id;
     // redirecionar para a página principal
-    header("Location: inicio.php");
+
+    header("Location: List_emprestimo.php?idEmprestimo=$id");
 } else {
     $_SESSION['mensagem'] = 'Erro ao salvar o usuário no banco de dados! ' .
         mysqli_errno($conexao) . ": " . mysqli_error($conexao);

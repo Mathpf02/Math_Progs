@@ -58,23 +58,23 @@ if (isset($_GET['id'])) {
         </div>
 
         <div class="P_form">
-            <form method="POST" action="env_emprestimo.php" class="form">
+            <form method="POST" action="env_emprestimo.php" class="form" enctype="multipart/form-data">
                 <div class="area_form">
                     <div class="form_1">
                         <div class="area_uput">
                             <label for="Perg_1">DISPÕES DE EQUIPAMENTO TECNOLÓGICO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_1" id="Perg_1" value="Perg1_sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg_1" value="Perg1_não">NÃO</div>
+                                <div class="area_radio"> <input type="radio" name="Perg_1" id="Perg_1" value="Sim">SIM</div>
+                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg_1" value="Não">NÃO</div>
                             </div>
                         </div>
 
                         <div class="area_uput">
                             <label for="Perg_2">TENS LIBERDADE DE UTILIZAÇÃO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg_2" value="Perg2_sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Perg2_não">NÃO</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Perg2_ntp">NÃO TEM EQUIP<br></div>
+                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg_2" value="sim">SIM</div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="não">NÃO</div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Não tem equipamento">NÃO TEM EQUIP<br></div>
                             </div>
                         </div>
                     </div>

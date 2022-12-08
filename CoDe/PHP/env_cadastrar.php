@@ -23,7 +23,7 @@ if (isset($_FILES['perfil'])) {
 $sql = "INSERT INTO cad_code (`matricula`, `nome`, `email`, `curso`, `fone`, `senha`, `f_perfil`)
 VALUE ('$Matricula','$Nome','$Email','$Curso','$Telefone','$SenhaMD5','$nomeImagem')";
 $resultSet = mysqli_query($conexao, $sql);
-if ($resultSet){
+if ($resultSet) {
     // pegar o id gerado
     $id = mysqli_insert_id($conexao);
     // colocar na sessão

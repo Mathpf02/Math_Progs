@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
         </div>
 
         <div class="P_form">
-            <form method="POST" action="env_cadastrar.php" class="form" onsubmit="return validarSenha();">
+            <form enctype="multipart/form-data" method="POST" action="env_cadastrar.php" class="form" onsubmit="return validarSenha();">
                 <div style="color: black;"><?= exibeMensagens() ?></div>
                 <div class="area_form">
                     <div class="form_1">

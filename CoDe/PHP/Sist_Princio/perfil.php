@@ -60,7 +60,7 @@ $pessoa = mysqli_fetch_assoc($result);
                             <input type="email" class="input_text" name="email" id="email" value="<?= $pessoa['email'] ?>"><br>
                         </div>
                         <div class="area_uput">
-                            <label for="curso">CURSO</label><br>
+                            <label for="curso">CURSO ATUAL: <?= strtoupper(explode('_', $pessoa['curso'])[1]) ?></label><br>
                             <div class="area_radios_area_">
                                 <div class="area_radio"> <input type="radio" name="curso" id="curso_adm" value="curso_adm">ADM</div>
                                 <div class="area_radio"><input type="radio" name="curso" id="curso_info" value="curso_info">INFO</div>
@@ -74,25 +74,26 @@ $pessoa = mysqli_fetch_assoc($result);
                     </div>
                     <div class="form_2">
                         <label for="foto">
+
                             <?php if ($pessoa['f_perfil'] == "") { ?>
                                 <img id="f_perfil" src="../../IMG/up_code.png">
 
-                                <input type="file" name="documento" id="documento" style='display:none'>
-
                             <?php } else {
                             ?>
-                                <img width="100%" src="../Up_Perfil/<?= $pessoa['f_perfil'] ?>" alt="">
+                                <img width="90%" src="../Up_Perfil/<?= $pessoa['f_perfil'] ?>" alt="">
 
-                                <input type="file" name="documento" id="documento" style='display:none'>
                             <?php } ?>
 
+                            <input type="file" name="perfil" id="foto" style='display:none'><br>
+                            FOTO DE PERFIL
+                            <p>Selecione uma foto para substituir.</p>
                         </label>
                     </div>
                 </div>
                 <div class="are_button">
-                    <button type="submit" onclick="msg()">SALVAR</button>
-                    <a href="excluir.php" onclick="msg()">Excluir Perfil</a>
+                    <button type="submit">SALVAR</button>
                 </div>
+
             </form>
         </div>
 
