@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 07-Dez-2022 às 21:23
--- Versão do servidor: 5.7.36
--- versão do PHP: 7.4.26
+-- Host: 127.0.0.1
+-- Tempo de geração: 08-Dez-2022 às 14:16
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,16 +27,14 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cad_code`
 --
 
-DROP TABLE IF EXISTS `cad_code`;
-CREATE TABLE IF NOT EXISTS `cad_code` (
+CREATE TABLE `cad_code` (
   `matricula` int(10) NOT NULL,
   `nome` text CHARACTER SET utf8 NOT NULL,
   `email` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
   `curso` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `fone` bigint(20) DEFAULT NULL,
   `senha` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
-  `f_perfil` varchar(2048) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`matricula`)
+  `f_perfil` varchar(2048) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -46,7 +44,8 @@ CREATE TABLE IF NOT EXISTS `cad_code` (
 INSERT INTO `cad_code` (`matricula`, `nome`, `email`, `curso`, `fone`, `senha`, `f_perfil`) VALUES
 (2019322700, 'Matheus Fontoura', 'matheus.2019322700@aluno.iffar.edu.br', 'curso_info', 55992125069, '202cb962ac59075b964b07152d234b70', ''),
 (2020316590, 'Matheus Martins Ciocca', 'matheus.2020316590@aluno.iffar.du.br', 'curso_info', 55984046607, '202cb962ac59075b964b07152d234b70', ''),
-(2023000000, 'Leandro Dallanora', 'Leandro@gmail.com', 'curso_info', 5599999999, '202cb962ac59075b964b07152d234b70', '');
+(2023000000, 'Leandro Dallanora', 'Leandro@gmail.com', 'curso_info', 5599999999, '202cb962ac59075b964b07152d234b70', ''),
+(2024000000, 'Trabalho de Conclusão', 'matheus.fontoura017@gmail.com', '', 55999998888, '6aadc19cb15cf2c38c0b2aa5b43fd362', 'f2c9cfc6348f0071ac2f39fa72c1cedd.png');
 
 -- --------------------------------------------------------
 
@@ -54,14 +53,12 @@ INSERT INTO `cad_code` (`matricula`, `nome`, `email`, `curso`, `fone`, `senha`, 
 -- Estrutura da tabela `emp_code`
 --
 
-DROP TABLE IF EXISTS `emp_code`;
-CREATE TABLE IF NOT EXISTS `emp_code` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `emp_code` (
+  `id` int(11) NOT NULL,
   `disp_Tec` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `liber_Uti` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `f_documento` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `f_documento` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Extraindo dados da tabela `emp_code`
@@ -76,8 +73,7 @@ INSERT INTO `emp_code` (`id`, `disp_Tec`, `liber_Uti`, `f_documento`) VALUES
 -- Estrutura da tabela `res_code`
 --
 
-DROP TABLE IF EXISTS `res_code`;
-CREATE TABLE IF NOT EXISTS `res_code` (
+CREATE TABLE `res_code` (
   `email` varchar(255) DEFAULT NULL,
   `token` varchar(255) DEFAULT NULL,
   `dat_inspire` datetime DEFAULT NULL,
@@ -98,7 +94,34 @@ INSERT INTO `res_code` (`email`, `token`, `dat_inspire`, `usado`) VALUES
 ('matheus.2019322700@aluno.iffar.edu.br', '4bf6c6152615163a31b03449301abbfc8d1444ee2f76069c4b2929cf5e7a132b513a282f7c554c744c2dfa355f5267a7e4be', '2022-12-08 19:11:20', 0),
 ('matheus.2019322700@aluno.iffar.edu.br', '18a7707a87f1ce7a4c659f1f7ffe6d8387acd50cb515e8e2c731ea6639da54fcb67f4fed4bbc35269d7dd82b141d2cc567ce', '2022-12-08 19:15:16', 0),
 ('matheus.2019322700@aluno.iffar.edu.br', '6c58465f1574dbcf4c42f99f8408cc856a862779fd309fbe5114afabc0c7820a31aa1a70c30063e2153fc410afb57fb8bb87', '2022-12-08 19:18:31', 0),
-('matheus.2019322700@aluno.iffar.edu.br', '3fcbeb4dc7b2449d96f4cdc07a0bcb7c1167db459d05f92633521c1a2df741a29bb4a75e6e2d15e7136fb67cea5edf5ddd36', '2022-12-08 19:39:46', 1);
+('matheus.2019322700@aluno.iffar.edu.br', '3fcbeb4dc7b2449d96f4cdc07a0bcb7c1167db459d05f92633521c1a2df741a29bb4a75e6e2d15e7136fb67cea5edf5ddd36', '2022-12-08 19:39:46', 1),
+('matheus.fontoura017@gmail.com', 'c3db73b4e1f82a76845c4b6f72a3e03fbaab47fd93eae3de39c8f20881ebb90200fef7f7f57f944ae36c346edb980e89100a', '2022-12-09 12:21:22', 1);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `cad_code`
+--
+ALTER TABLE `cad_code`
+  ADD PRIMARY KEY (`matricula`);
+
+--
+-- Índices para tabela `emp_code`
+--
+ALTER TABLE `emp_code`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `emp_code`
+--
+ALTER TABLE `emp_code`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
