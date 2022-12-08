@@ -37,9 +37,9 @@ if (!is_null($usuario)) { // caso o email exista no banco de dados
 
         //quem vai enviar o email
 
-        $mail->setFrom('matheus.2019322700@aluno.iffar.edu.br', 'Recuperar Senha');
+        $mail->setFrom('matheus.2019322700@aluno.iffar.edu.br', 'Contato CoDe');
         $mail->addAddress($email); //Add a recipient
-        $mail->addReplyTo('matheus.2019322700@aluno.iffar.edu.br', 'Recuperar Senha');
+        $mail->addReplyTo('matheus.2019322700@aluno.iffar.edu.br', 'Contato CoDe');
 
         //conteúdo do email
 

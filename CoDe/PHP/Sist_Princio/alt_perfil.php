@@ -15,7 +15,7 @@ if (isset($_FILES['foto'])) {
 
     $ext = strrchr($_FILES['foto']['name'], '.');
     $nomeImagem = md5(time()) . $ext;
-    $dir = "Up_Perfil/";
+    $dir = "../Up_Perfil/";
     move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $nomeImagem);
 }
 if($_FILES['foto']['error'] == 0){

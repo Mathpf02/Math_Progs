@@ -9,7 +9,7 @@ if (isset($_FILES['documento'])) {
 
     $ext = strrchr($_FILES['documento']['name'], '.');
     $F_Documento = md5(time()) . $ext;
-    $dir = "Up_Documento/";
+    $dir = "../Up_Documento/";
     move_uploaded_file($_FILES['documento']['tmp_name'], $dir . $F_Documento);
 }
 
