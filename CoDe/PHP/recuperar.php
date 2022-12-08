@@ -28,6 +28,7 @@ require_once "funcoes.php";
                 <input type="text" name="email"id="email"><br>
 
                 <button type="submit">SOLICITAR RECUPERAÇÃO</button><br>
+                <a href="login.php">Voltar para inicio </a>
             </form>
 
         </div>
