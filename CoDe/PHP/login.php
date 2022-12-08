@@ -49,7 +49,7 @@ require_once "funcoes.php";
             <h2>Leia o meu TCC</h2>
             <p>Escaneie isto com o <b>Google Leans
                     atráves da câmera do celular</b> para
-                ler o poder ler o documento.</p>
+                poder ler o documento.</p>
         </div>
 
     </div>

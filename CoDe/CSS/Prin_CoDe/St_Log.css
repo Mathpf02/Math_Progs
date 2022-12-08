@@ -63,7 +63,7 @@ a:hover {
 
 .conteiner{
     width: 650px;
-    height: 350px;
+    height: 380px;
     display: flex;
     
     background-color: #6A82A4;
@@ -83,7 +83,7 @@ a:hover {
     justify-items: flex-start;
 }.esquerda .superior{
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.1rem;
 }.esquerda .superior h2{
     margin-bottom: 5px;
     font-weight: bold;

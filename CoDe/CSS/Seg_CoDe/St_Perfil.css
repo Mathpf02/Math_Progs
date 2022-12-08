@@ -103,6 +103,18 @@
     display: flex;
     flex-direction: column;
   }
+  #input_text{
+    height: 25px;
+    border-radius: 5px;
+    border-color: #011D42;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid #011D42 ;
+
+    font-size: 1.1rem;
+    padding: 0 10px;
+    margin-bottom: 3px;
+  }
   .area_form {
     display: flex;
     flex-direction: row;
@@ -149,7 +161,8 @@
   .are_button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     padding: 0px 10px;
   }
   .are_button button {
