@@ -80,11 +80,11 @@ header {
   margin: 150px;
 }
 .proj_code .text_code {
-  /* width: ; */
+  width: 30rem;
   height: auto;
   display: flex;
   text-align: end;
-  justify-content: column;
+  flex-direction: column;
   padding: 10px;
   color: #011d42;
   border-radius: 10px;
@@ -93,7 +93,7 @@ header {
   height: 350px;
   width: 350px;
   flex: 1;
-  background-color: red;
+  background-color: rgb(182, 170, 235);
 }
 .text_code {
   display: inline-flex;
