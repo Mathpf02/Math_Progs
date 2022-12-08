@@ -90,7 +90,7 @@ if (isset($_GET['id'])) {
                             <img id="f_documento" src="../../IMG/doc_code.png">
                             <input type="file" id='documento' name="documento" style="display:none;"> <br>
                             DECLARAÇÃO DE VÍNCULO
-                            <p>Selecione uma cópia da sua declaração de vinculo na Instituição.</p>
+                            <p>Selecione uma foto (jpg ou png) da sua declaração de vinculo na Instituição.</p>
                         </label>
 
                     </div>
