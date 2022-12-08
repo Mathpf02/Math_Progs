@@ -1,3 +1,11 @@
+<?php 
+session_start();
+require_once "conecta.php";
+$id=$_SESSION['matricula'];
+$sql="SELECT * FROM cad_code WHERE matricula='$id'";
+$result= mysqli_query($conexao, $sql);
+$pessoa = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,17 +47,16 @@
         </div>
 
         <div class="P_form">
-            <form method="POST" action="alt_perfil.php" class="form" onsubmit="return validarSenha();">
-                <div style="color: black;"><?= exibeMensagens() ?></div>
+            <form method="POST" enctype="multipart/form-data" action="alt_perfil.php" class="form" onsubmit="return validarSenha();">
                 <div class="area_form">
                     <div class="form_1">
                         <div class="area_uput">
                             <label for="name">NOME</label>
-                            <input type="text" class="input_text" name="nome" id="nome" value="<?= $nome  ?>"><br>
+                            <input type="text" class="input_text" name="nome" id="nome" value="<?=$pessoa['nome']?>"><br>
                         </div>
                         <div class="area_uput">
                             <label for="email">E-MAIL</label>
-                            <input type="email" class="input_text" name="email" id="email" value="<?= $email ?>"><br>
+                            <input type="email" class="input_text" name="email" id="email" value="<?=$pessoa['email'] ?>"><br>
                         </div>
                         <div class="area_uput">
                             <label for="curso">CURSO</label><br>
@@ -61,22 +68,17 @@
                         </div>
                         <div class="area_uput">
                             <label for="fone">TELEFONE</label>
-                            <input type="fone" class="input_text" name="fone" id="fone" value="<?= $telefone  ?>"><br>
+                            <input type="fone" class="input_text" name="fone" id="fone" value="<?= $pessoa['fone'] ?>"><br>
                         </div>
                     </div>
-
-                    <div class="form_2">
                         <label for="perfil">
-                            <img id="f_perfil" src="../IMG/up_code.png">
-                            <input type="file" id='perfil' name="perfil" style="display:none;"> <br>
-                            PERFIL</label>
-                        <p>Selecione uma foto de perfil.</p>
+                        <input type="file"  id="foto" name="foto" accept="image/png, image/jpeg"><br>
+                        PERFIL</label>
                     </div>
-                </div>
                 <div class="are_button">
-                    <button type="submit"onclick="msg()">CADASTRAR</button>
+                    <button type="submit"onclick="msg()">SALVAR</button>
                 </div>
-
+                <a href="excluir.php">Excluir sessão</a>
             </form>
         </div>
 

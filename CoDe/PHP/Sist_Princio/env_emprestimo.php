@@ -2,9 +2,7 @@
 session_start();
 require_once "../conexao.php";
 
-var_dump($_POST);
-
-/*$Perg_1 = mysqli_real_escape_string($conexao, $_POST['Perg_1']);
+$Perg_1 = mysqli_real_escape_string($conexao, $_POST['Perg_1']);
 $Perg_2 = mysqli_real_escape_string($conexao, $_POST['Perg_2']);
 
 if (isset($_FILES['documento'])) {
@@ -29,4 +27,4 @@ if ($resultSet) {
     $_SESSION['mensagem'] = 'Erro ao salvar o usuário no banco de dados! ' .
         mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     header("Location: emprestimo.php");
-}*/
+}

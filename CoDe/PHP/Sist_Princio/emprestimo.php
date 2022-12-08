@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-// if (!isset($_SESSION['id_pessoa'])) {
-//     $_SESSION['mensagem'] = "Você deve primeiro realizar o login.";
-//     header("Location: index.php");
-// }
 require_once "../funcoes.php";
 require_once "../conexao.php";
 if (isset($_GET['id'])) {
@@ -69,17 +64,17 @@ if (isset($_GET['id'])) {
                         <div class="area_uput">
                             <label for="Perg_1">DISPÕES DE EQUIPAMENTO TECNOLÓGICO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_1" value="SIM" id="Perg1_sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg1_não">NÃO</div>
+                                <div class="area_radio"> <input type="radio" name="Perg_1" id="Perg_1" value="Perg1_sim">SIM</div>
+                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg_1" value="Perg1_não">NÃO</div>
                             </div>
                         </div>
 
                         <div class="area_uput">
                             <label for="Perg_2">TENS LIBERDADE DE UTILIZAÇÃO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg2_sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg2_não">NÃO</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg2_ntp">NÃO TEM EQUIP<br></div>
+                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg_2" value="Perg2_sim">SIM</div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Perg2_não">NÃO</div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Perg2_ntp">NÃO TEM EQUIP<br></div>
                             </div>
                         </div>
                     </div>

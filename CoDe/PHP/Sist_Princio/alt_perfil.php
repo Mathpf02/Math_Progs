@@ -1,40 +1,30 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['matricula'])) {
-    $_SESSION['mensagem'] = "Você deve primeiro realizar o login.";
-    header("Location: ../login.php");
-}
-
 echo '<meta charset="UTF-8">';
-include "conexao.php";
+include "conecta.php";
 $id= $_SESSION['matricula'];
 $nome=$_POST['nome'];
 $email=$_POST['email'];
 $curso=$_POST['curso'];
 $fone=$_POST['fone'];
 
-$sql= "UPDATE cad_code SET nome='$nome', email='$email',curso='$curso',fone='$fone' WHERE matricula=$matricula";
+$sql= "UPDATE cad_code SET nome='$nome', email='$email',curso='$curso',fone='$fone' WHERE matricula=$id";
 $resultado= mysqli_query($conexao,$sql);
-if(isset($_FILES['perfil'])){
+if (isset($_FILES['foto'])) {
 
-    $ext = strrchr($_FILES['perfil']['name'], '.');
-    $nomeImagem = md5(time()).$ext;
+    $ext = strrchr($_FILES['foto']['name'], '.');
+    $nomeImagem = md5(time()) . $ext;
     $dir = "Up_Perfil/";
-
-    move_uploaded_file($_FILES['perfil']['tmp_name'], $dir.$nomeImagem);
-
+    move_uploaded_file($_FILES['foto']['tmp_name'], $dir . $nomeImagem);
 }
-
-if($_FILES['perfil']['error'] == 0){
-$sql = "UPDATE `cad_code` SET nome='$nome', email='$email',curso='$curso',fone='$fone' WHERE matricula='$matricula'";
+if($_FILES['foto']['error'] == 0){
+$sql = "UPDATE `cad_code` SET nome='$nome', email='$email',curso='$curso',fone='$fone',f_perfil='$nomeImagem' WHERE matricula='$id'";
 }else{
-    $sql = "UPDATE `cad_code` SET nome='$nome', email='$email',curso='$curso',fone='$fone' WHERE matricula='$matricula'";
+    $sql = "UPDATE `cad_code` SET nome='$nome', email='$email',curso='$curso',fone='$fone' WHERE matricula='$id'";
 }
 
 $resultado = mysqli_query($conexao,$sql);
-
-var_dump($sql);
 
 mysqli_close($conexao);
 
