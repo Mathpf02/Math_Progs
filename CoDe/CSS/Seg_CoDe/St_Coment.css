@@ -44,7 +44,8 @@ header {
 }
 .nav_itens {
   margin: 2rem;
-}.nav_itens:hover{
+}
+.nav_itens:hover {
   text-decoration: underline;
 }
 .nav_link {
@@ -107,10 +108,15 @@ header {
 .com_titulo {
   text-align: center;
 }
-.are_button .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    
+.are_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.are_button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
