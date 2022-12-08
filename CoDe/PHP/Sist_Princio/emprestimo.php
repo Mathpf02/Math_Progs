@@ -37,6 +37,7 @@ if (isset($_GET['id'])) {
                 <ul>
                     <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
                     <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                    <li class="nav_itens"><a href="List_emprestimo.php" class="nav_link">LISTA DE EMPRESTIMO</a></li>
                     <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
                     <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
                 </ul>
@@ -64,17 +65,22 @@ if (isset($_GET['id'])) {
                         <div class="area_uput">
                             <label for="Perg_1">DISPÕES DE EQUIPAMENTO TECNOLÓGICO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_1" id="Perg_1" value="Sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg_1" value="Não">NÃO</div>
+                                <div class="area_radio"> <input type="radio" name="Perg_1" id="Perg_1" value="Sim">SIM
+                                </div>
+                                <div class="area_radio"><input type="radio" name="Perg_1" id="Perg_1" value="Não">NÃO
+                                </div>
                             </div>
                         </div>
 
                         <div class="area_uput">
                             <label for="Perg_2">TENS LIBERDADE DE UTILIZAÇÃO:</label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg_2" value="sim">SIM</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="não">NÃO</div>
-                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="Não tem equipamento">NÃO TEM EQUIP<br></div>
+                                <div class="area_radio"> <input type="radio" name="Perg_2" id="Perg_2" value="sim">SIM
+                                </div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2" value="não">NÃO
+                                </div>
+                                <div class="area_radio"><input type="radio" name="Perg_2" id="Perg_2"
+                                        value="Não tem equipamento">NÃO TEM EQUIP<br></div>
                             </div>
                         </div>
                     </div>
@@ -102,14 +108,14 @@ if (isset($_GET['id'])) {
 
 </html>
 <script>
-    document.querySelector('#perfil').addEventListener('change', () => {
-        alert('Sua foto foi selecionada corretamente.');
-    })
+document.querySelector('#perfil').addEventListener('change', () => {
+    alert('Sua foto foi selecionada corretamente.');
+})
 
-    function msg() {
+function msg() {
 
-        if (confirm('Deseja confirmar o cancelamento?')) {
-            window.location.href = 'inicio.php';
-        }
+    if (confirm('Deseja confirmar o cancelamento?')) {
+        window.location.href = 'inicio.php';
     }
+}
 </script>

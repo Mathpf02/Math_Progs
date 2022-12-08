@@ -14,7 +14,7 @@ $emprestimo = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/Seg_CoDe/St_Perfil.css">
+    <link rel="stylesheet" href="../../CSS/Seg_Code/St_Listagem.css">
 
     <title>CoDe: Perfil Usuario</title>
 </head>
@@ -27,6 +27,7 @@ $emprestimo = mysqli_fetch_assoc($result);
             <ul>
                 <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
                 <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                <li class="nav_itens"><a href="List_emprestimo.php" class="nav_link">LISTA DE EMPRESTIMO</a></li>
                 <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
                 <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
             </ul>
@@ -40,35 +41,40 @@ $emprestimo = mysqli_fetch_assoc($result);
 
 <body>
     <div class="conteiner">
+        <div class="superior">
+            <p>Sistema de</p>
+            <strong>
+                <h2>LISTAGEM</h2>
+            </strong>
+        </div>
 
         <body>
             <div class="infoEmprestimo">
-                <p>
-
-                    <img width=200 src="../Up_Documento/<?= $emprestimo['f_documento'] ?>" alt="">
-
-                </p>
-                <br><br><br>
                 <ul>
-
-
-
                     <li>
                         <p>
-                            <big> Disponibilidade Tecnológica: <?= $emprestimo['disp_Tec'] ?></big>
+                            <big> Possui Equipamento Tecnológica: <?= $emprestimo['disp_Tec'] ?></big>
                         </p>
                     </li>
-                    <br><br><br>
+                    <br>
                     <li>
                         <p>
-                            <big> Liberadade de utilização: <?= $emprestimo['liber_Uti'] ?></big>
+                            <big> Possui Liberadade de utilização: <?= $emprestimo['liber_Uti'] ?></big>
                         </p>
                     </li>
+                    <br>
+                    <li>
+                        <p>
+                            <big> Foto do Documento:</big><br>
+                            <img width=200 src="../Up_Documento/<?= $emprestimo['f_documento'] ?>" alt="">
+
+                        </p>
+                        <br>
+                    </li>
+
 
                 </ul>
             </div>
-
-
         </body>
 
 </html>

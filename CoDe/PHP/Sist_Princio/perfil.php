@@ -26,6 +26,7 @@ $pessoa = mysqli_fetch_assoc($result);
             <ul>
                 <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
                 <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                <li class="nav_itens"><a href="List_emprestimo.php" class="nav_link">LISTA DE EMPRESTIMO</a></li>
                 <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
                 <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
             </ul>
@@ -48,39 +49,47 @@ $pessoa = mysqli_fetch_assoc($result);
         </div>
 
         <div class="P_form">
-            <form method="POST" enctype="multipart/form-data" action="alt_perfil.php" class="form" onsubmit="return validarSenha();">
+            <form method="POST" enctype="multipart/form-data" action="alt_perfil.php" class="form"
+                onsubmit="return validarSenha();">
                 <div class="area_form">
                     <div class="form_1">
                         <div class="area_uput">
                             <label for="name">NOME</label><br>
-                            <input type="text" class="input_text" name="nome" id="nome" value="<?= $pessoa['nome'] ?>"><br>
+                            <input type="text" class="input_text" name="nome" id="nome"
+                                value="<?= $pessoa['nome'] ?>"><br>
                         </div>
                         <div class="area_uput">
                             <label for="email">E-MAIL</label><br>
-                            <input type="email" class="input_text" name="email" id="email" value="<?= $pessoa['email'] ?>"><br>
+                            <input type="email" class="input_text" name="email" id="email"
+                                value="<?= $pessoa['email'] ?>"><br>
                         </div>
                         <div class="area_uput">
-                            <label for="curso">CURSO ATUAL: <?= strtoupper(explode('_', $pessoa['curso'])[1]) ?></label><br>
+                            <label for="curso">CURSO ATUAL:
+                                <?= strtoupper(explode('_', $pessoa['curso'])[1]) ?></label><br>
                             <div class="area_radios_area_">
-                                <div class="area_radio"> <input type="radio" name="curso" id="curso_adm" value="curso_adm">ADM</div>
-                                <div class="area_radio"><input type="radio" name="curso" id="curso_info" value="curso_info">INFO</div>
-                                <div class="area_radio"><input type="radio" name="curso" id="curso_msi" value="curso_msi">MSI<br></div>
+                                <div class="area_radio"> <input type="radio" name="curso" id="curso_adm"
+                                        value="curso_adm">ADM</div>
+                                <div class="area_radio"><input type="radio" name="curso" id="curso_info"
+                                        value="curso_info">INFO</div>
+                                <div class="area_radio"><input type="radio" name="curso" id="curso_msi"
+                                        value="curso_msi">MSI<br></div>
                             </div>
                         </div>
                         <div class="area_uput">
                             <label for="fone">TELEFONE</label><br>
-                            <input type="fone" class="input_text" name="fone" id="fone" value="<?= $pessoa['fone'] ?>"><br>
+                            <input type="fone" class="input_text" name="fone" id="fone"
+                                value="<?= $pessoa['fone'] ?>"><br>
                         </div>
                     </div>
                     <div class="form_2">
                         <label for="foto">
 
                             <?php if ($pessoa['f_perfil'] == "") { ?>
-                                <img id="f_perfil" src="../../IMG/up_code.png">
+                            <img id="f_perfil" src="../../IMG/up_code.png">
 
                             <?php } else {
                             ?>
-                                <img width="90%" src="../Up_Perfil/<?= $pessoa['f_perfil'] ?>" alt="">
+                            <img width="90%" src="../Up_Perfil/<?= $pessoa['f_perfil'] ?>" alt="">
 
                             <?php } ?>
 
@@ -91,8 +100,9 @@ $pessoa = mysqli_fetch_assoc($result);
                     </div>
                 </div>
                 <div class="are_button">
-                    <button type="submit">SALVAR</button>
+                    <button type="submit" onclick="msg()">SALVAR</button>
                 </div>
+                <a href="excluir.php" onclick="msg()"> Excluir Perfil</a>
 
             </form>
         </div>
@@ -103,21 +113,21 @@ $pessoa = mysqli_fetch_assoc($result);
 
 </html>
 <script>
-    document.querySelector('#perfil').addEventListener('change', () => {
-        alert('Sua foto foi selecionada corretamente.');
-    })
+document.querySelector('#perfil').addEventListener('change', () => {
+    alert('Sua foto foi selecionada corretamente.');
+})
 
-    function msg() {
+function msg() {
 
-        if (confirm('Deseja confirmar a edição?')) {
-            window.location.href = 'inicio.php';
-        }
+    if (confirm('Deseja confirmar a edição?')) {
+        window.location.href = 'inicio.php';
     }
+}
 
-    function msg(Apaga) {
+function msg(Apaga) {
 
-        if (confirm('Deseja confirmar a exclusão do seu Perfil?')) {
-            window.location.href = 'inicio.php';
-        }
+    if (confirm('Deseja confirmar a exclusão do seu Perfil?')) {
+        window.location.href = 'inicio.php';
     }
+}
 </script>

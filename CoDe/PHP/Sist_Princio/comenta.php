@@ -19,6 +19,7 @@
                 <ul>
                     <li class="nav_itens"><a href="inicio.php" class="nav_link">PROJETO</a></li>
                     <li class="nav_itens"><a href="emprestimo.php" class="nav_link">EMPRESTIMO</a></li>
+                    <li class="nav_itens"><a href="List_emprestimo.php" class="nav_link">LISTA DE EMPRESTIMO</a></li>
                     <li class="nav_itens"><a href="perfil.php" class="nav_link">PERFIL</a></li>
                     <li class="nav_itens"><a href="Comenta.php" class="nav_link">CONTATO</a></li>
                 </ul>
@@ -64,10 +65,10 @@
 
 </html>
 <script>
-    function msg() {
+function msg() {
 
-        if (confirm('Deseja enviar está mensagem?')) {
-            window.location.href = 'comenta.php';
-        }
+    if (confirm('Deseja enviar está mensagem?')) {
+        window.location.href = 'comenta.php';
     }
+}
 </script>
