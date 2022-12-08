@@ -31,7 +31,7 @@ $pessoa = mysqli_fetch_assoc($result);
             </ul>
         </div>
         <div class="log_button">
-            <button><a href="../../logout.php">SAIR</a></button>
+            <button><a href="../logout.php">SAIR</a></button>
         </div>
     </nav>
 </header>
@@ -53,12 +53,12 @@ $pessoa = mysqli_fetch_assoc($result);
                 <div class="area_form">
                     <div class="form_1">
                         <div class="area_uput">
-                            <label for="name">NOME</label>
+                            <label for="name">NOME</label><br>
                             <input type="text" class="input_text" name="nome" id="nome"
                                 value="<?=$pessoa['nome']?>"><br>
                         </div>
                         <div class="area_uput">
-                            <label for="email">E-MAIL</label>
+                            <label for="email">E-MAIL</label><br>
                             <input type="email" class="input_text" name="email" id="email"
                                 value="<?=$pessoa['email'] ?>"><br>
                         </div>
@@ -74,18 +74,22 @@ $pessoa = mysqli_fetch_assoc($result);
                             </div>
                         </div>
                         <div class="area_uput">
-                            <label for="fone">TELEFONE</label>
+                            <label for="fone">TELEFONE</label><br>
                             <input type="fone" class="input_text" name="fone" id="fone"
                                 value="<?= $pessoa['fone'] ?>"><br>
                         </div>
                     </div>
-                    <label for="perfil">
-                        <input type="file" id="foto" name="foto" accept="image/png, image/jpeg"><br>
-                        PERFIL</label>
+                    <div class="form_2"> 
+                        <label for="foto">
+                          <img id="f_documento" src="../../IMG/up_code.png">
+                          <input type="file" id="foto" name="foto" accept="image/png, image/jpeg" style="display: none;"><br>
+                           PERFIL
+                        </label>
+                    </div>
                 </div>
                 <div class="are_button">
                     <button type="submit" onclick="msg()">SALVAR</button>
-                    <a href="excluir.php">Excluir sessão</a>
+                    <a href="excluir.php"onclick="msg()">Excluir Perfil</a>
                 </div>
             </form>
         </div>
@@ -103,6 +107,12 @@ document.querySelector('#perfil').addEventListener('change', () => {
 function msg() {
 
     if (confirm('Deseja confirmar a edição?')) {
+        window.location.href = 'inicio.php';
+    }
+}
+function msg(Apaga) {
+
+    if (confirm('Deseja confirmar a exclusão do seu Perfil?')) {
         window.location.href = 'inicio.php';
     }
 }
